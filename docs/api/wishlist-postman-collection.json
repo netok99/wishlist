@@ -1,0 +1,54 @@
+{
+  "info": {
+    "name": "Wishlist",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "addProduct",
+      "event": [],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": "http://localhost:8082/api/v1/customers/1/wishlist/products/1"
+      }
+    },
+    {
+      "name": "clear wishlist",
+      "event": [],
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": "http://localhost:8082/api/v1/customers/1/wishlist"
+      }
+    },
+    {
+      "name": "check product exists",
+      "event": [],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "http://localhost:8082/api/v1/customers/1/wishlist/products/1"
+      }
+    },
+    {
+      "name": "delete product",
+      "event": [],
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": "http://localhost:8082/api/v1/customers/1/wishlist/products/1"
+      }
+    },
+    {
+      "name": "wishlist",
+      "event": [],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "http://localhost:8082/api/v1/customers/1/wishlist"
+      }
+    }
+  ],
+  "variable": []
+}
