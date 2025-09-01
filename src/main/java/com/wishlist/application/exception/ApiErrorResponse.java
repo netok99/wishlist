@@ -26,12 +26,20 @@ public class ApiErrorResponse {
         this.path = path;
     }
 
+    public String getCode() {
+        return code;
+    }
+
     public String getMessage() {
         return message;
     }
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    public String getPath() {
+        return path;
     }
 
     public static class ApiErrorResponseBuilder {
