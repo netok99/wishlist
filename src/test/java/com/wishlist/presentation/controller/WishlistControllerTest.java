@@ -53,8 +53,6 @@ public class WishlistControllerTest {
     private ObjectMapper objectMapper;
     private final String VALID_CUSTOMER_ID = "customer123";
     private final String VALID_PRODUCT_ID = "product456";
-    private final String INVALID_CUSTOMER_ID = "customer@invalid";
-    private final String INVALID_PRODUCT_ID = "product@invalid#123";
 
     @Nested
     @DisplayName("Given a customer wants to get their wishlist")
@@ -116,8 +114,9 @@ public class WishlistControllerTest {
         @Test
         @DisplayName("Should return 400 Bad Request for invalid customer ID format")
         void shouldReturn400BadRequestForInvalidCustomerIdFormat() throws Exception {
+            final String invalidCustomerId = "customer@invalid";
             mockMvc
-                .perform(get("/api/v1/customers/{customerId}/wishlist", INVALID_CUSTOMER_ID))
+                .perform(get("/api/v1/customers/{customerId}/wishlist", invalidCustomerId))
                 .andExpect(status().isBadRequest())
                 .andExpect(jsonPath("$.code", is("VALIDATION_ERROR")))
                 .andExpect(jsonPath("$.message",
@@ -218,11 +217,12 @@ public class WishlistControllerTest {
         @Test
         @DisplayName("Should return 400 Bad Request for invalid product ID format")
         void shouldReturn400BadRequestForInvalidProductIdFormat() throws Exception {
+            final String invalidProductId = "product@invalid#123";
             mockMvc
                 .perform(
                     post("/api/v1/customers/{customerId}/wishlist/products/{productId}",
                         VALID_CUSTOMER_ID,
-                        INVALID_PRODUCT_ID
+                        invalidProductId
                     )
                 )
                 .andExpect(status().isBadRequest())

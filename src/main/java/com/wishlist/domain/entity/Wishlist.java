@@ -25,6 +25,10 @@ public class Wishlist {
         this.updatedAt = LocalDateTime.now();
     }
 
+    public String getId() {
+        return id;
+    }
+
     public List<WishlistProduct> getProducts() {
         return products;
     }
@@ -68,5 +72,13 @@ public class Wishlist {
 
     public String getCustomerId() {
         return customerId;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
     }
 }
